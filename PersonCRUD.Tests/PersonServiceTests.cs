@@ -46,7 +46,7 @@ public class PersonServiceTests
         await _personService.CheckPersonExists(email);
 
         //Assert
-        await _repository.Received(1).GetByEmail(email);
+        await _repository.Received(2).GetByEmail(email);
         await _repository.DidNotReceive().Get(Arg.Any<int>());
     }
 
